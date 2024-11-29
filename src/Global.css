@@ -1,0 +1,55 @@
+:root {
+    --var-primary-color: #DDD0C8;
+    --var-secondary-color: #323232;
+    --white-text-100: #f1f1f1;
+    --white-text-200: #ececec;
+    --black-text-100: #3b3b3b;
+    --balck-text-200: #1c1c1c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Button */
+.brown_btn {
+    background-color: var(--var-secondary-color);
+    color: var(--white-text-200);
+}
+
+.carmel_outline_btn {
+    color: var(--white-text-200);
+    border: 1px solid var(--var-primary-color);
+}
+
+.app {
+    background-color: var(--var-primary-color);
+    width: 100%;
+    height: 100vh;
+}
+
+/* Navbar */
+.nav_bg_color {
+    background-color: var(--var-secondary-color);
+    color: var(--white-text-200);
+}
+
+.nav_form_input {
+    background-color: var(--var-primary-color);
+    color: var(--white-text-200);
+}
+
+.navbar_logo {
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--white-text-200);
+}
+
+/* Sidebar */
+
