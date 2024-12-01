@@ -2,13 +2,13 @@ import React from 'react'
 
 function MobileContactList({contacts}) {
     return (
-        <div className='flex flex_col'>
+        <div className='flex flex_col contact_list'>
             <div className="flex flex_space_between m-3 contact_title_div">
                 <h1 className="contact_title">Contacts: </h1>
                 <button className="btn bold brown_btn mx-lg-5">Add Contact</button> 
             </div>
 
-            <div className="flex flex_wrap flex_gap_10">
+            <div className="flex flex_wrap flex_gap_10 flex_center">
                 {
                     contacts.map((contact, i) => (
                         <>

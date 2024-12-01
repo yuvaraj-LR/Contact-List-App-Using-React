@@ -44,6 +44,12 @@ li {
     border: 1px solid var(--var-primary-color);
 }
 
+.carmel_outline_btn:hover {
+    border: 1px solid var(--var-primary-color);
+    background-color: var(--var-primary-color);
+    color: var(--balck-text-200);
+}
+
 .brown_outline_btn {
     color: var(--black-text-100);
     border: 1px solid var(--var-secondary-color);

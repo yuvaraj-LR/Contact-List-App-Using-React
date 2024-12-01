@@ -7,6 +7,9 @@
 .nav_bg_color {
     background-color: var(--var-secondary-color);
     color: var(--white-text-200);
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 
 .nav_form_input {
@@ -23,7 +26,7 @@
 /* Sidebar */
 .sidebar {
     justify-content: center;
-    margin-bottom: 16px;
+    margin-top: 94px;
 }
 
 .menu_btn {
@@ -77,9 +80,26 @@
     align-items: center;
 }
 
+@media (min-width: 768px) {
+    .card {
+        max-width: 350px;
+        width: 100%;
+    }
+
+    .sidebar {
+        margin-top: 64px;
+    }
+}
+
 @media (min-width: 1200px) {
     .contact_list_app {
         flex-direction: row;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: -24px;
+        height: 95%;
     }
 
     .sidebar_dropdown {
@@ -102,5 +122,24 @@
         gap: 16px;
         font-size: 18px;
         font-weight: 500;
+    }
+
+    .contact_list {
+        margin-left: 192px;
+        margin-top: 36px;
+    }
+
+    .contact_title_div {
+        padding-left: 32px;
+    }
+
+    .contact_title {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+
+    .card {
+        max-width: 380px;
     }
 }
