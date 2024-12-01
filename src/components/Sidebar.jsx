@@ -10,7 +10,7 @@ function Sidebar() {
             <div className="sidebar_dropdown">
                 <button className="btn brown_outline_btn flex flex_space_between m-auto menu_btn" onClick={() => setToggleDropdown(!toggleDropdown)}>
                     <span>Menu</span>
-                    <span><i classname="fa-solid fa-caret-down"></i></span>
+                    <span><i class="fa-solid fa-caret-down"></i></span>
                 </button>
 
                 <ul className={`flex flex-column flex_center  ${toggleDropdown ? 'dropdown_list' : 'hidden'}`}>
@@ -26,15 +26,15 @@ function Sidebar() {
                 <div className="sidebar_menu_desk">
                     <ul className="sidebar_menu_desk_ul">
                         <li className="sidebar_menu_desk_li">
-                            <span className="sidebar_desk_icon"><i classname="fa-solid fa-house"></i></span>
+                            <span className="sidebar_desk_icon"><i class="fa-solid fa-house"></i></span>
                             <span className="sidebar_desk_icon">Home</span>
                         </li>
                         <li className="sidebar_menu_desk_li">
-                            <span className="sidebar_desk_icon"><i classname="fa-solid fa-address-card"></i></span>
+                            <span className="sidebar_desk_icon"><i class="fa-solid fa-address-card"></i></span>
                             <span className="sidebar_desk_icon">About us</span>
                         </li>
                         <li className="sidebar_menu_desk_li">
-                            <span className="sidebar_desk_icon"><i classname="fa-solid fa-address-book"></i></span>
+                            <span className="sidebar_desk_icon"><i class="fa-solid fa-address-book"></i></span>
                             <span className="sidebar_desk_icon">Contact Us</span>
                         </li>
                     </ul>

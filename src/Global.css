@@ -1,6 +1,7 @@
 :root {
     --var-primary-color: #DDD0C8;
     --var-secondary-color: #323232;
+    --var-third-color: #c9c9c900;
     --white-text-100: #f1f1f1;
     --white-text-200: #ececec;
     --black-text-100: #3b3b3b;
@@ -30,6 +31,12 @@ li {
 .brown_btn {
     background-color: var(--var-secondary-color);
     color: var(--white-text-200);
+    font-weight: 600;
+}
+
+.brown_btn:hover {
+    border: 1px solid var(--var-secondary-color);
+    color: var(--black-text-200);
 }
 
 .carmel_outline_btn {
@@ -40,6 +47,12 @@ li {
 .brown_outline_btn {
     color: var(--black-text-100);
     border: 1px solid var(--var-secondary-color);
+}
+
+.brown_outline_btn:hover {
+    border: 1px solid var(--var-secondary-color);
+    background-color: var(--var-primary-color);
+    color: var(--var-secondary-color);
 }
 
 .flex {
@@ -58,6 +71,14 @@ li {
     gap: 10px;
 }
 
+.flex_wrap {
+    flex-wrap: wrap;
+}
+
+.flex_col {
+    flex-direction: column;
+}
+
 .w-100 {
     width: 100%;
 }
@@ -66,4 +87,11 @@ li {
     display: none;
 }
 
+.normal {
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
+}
 
