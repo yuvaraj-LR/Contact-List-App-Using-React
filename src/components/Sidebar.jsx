@@ -42,7 +42,7 @@ function Sidebar() {
 
                 <div className="sidebar_login_desk">
                     <button className="btn flex flex_center flex_gap_10 w-100 brown_btn ">
-                        <span><i classname="fa-solid fa-right-to-bracket"></i></span>
+                        <span><i class="fa-solid fa-right-to-bracket"></i></span>
                         <span>Login</span>
                     </button>
                 </div>
