@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
-function ContactFormAdd({setAddToggleFormBox}) {
-
+function ContactFormAdd({setAddToggleFormBox, contacts, setContact}) {
   const [name, setName] = useState('');
   const [cname, setCName] = useState('');
   const [email, setEmail] = useState('');
@@ -13,19 +12,35 @@ function ContactFormAdd({setAddToggleFormBox}) {
     e.preventDefault();
 
     const payload = {
-      name, 
-      cname, 
-      email,
-      number,
-      street,
-      city
+      contact: {
+        name: name,
+        email: email,
+        phone: number,
+        company: {
+          name: cname
+        }, 
+        address: {
+          street: street,
+          city: city
+        }
+      }
     }
 
-    // fetch("https://jsonplaceholder.typicode.com/users", {
-    //   method: "POST",
-    //   body: {payload}
-    // });
+    try {
+      // fetch("https://jsonplaceholder.typicode.com/users", {
+      //   method: "POST",
+      //   body: {payload}
+      // });
+      console.log(contacts, "previous contacts");
 
+      setContact(contacts.push(payload));
+
+      console.log(contacts, "after contacts");
+
+      console.log("Added successfully.");
+    } catch (error) {
+      console.error(error);
+    }
   }
   
   return (

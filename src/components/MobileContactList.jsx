@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ContactFormAdd from './ContactFormAdd';
 
-function MobileContactList({contacts}) {
+function MobileContactList({contacts, setContact}) {
 
     const [addToggleFormBox, setAddToggleFormBox] = useState(false);
     const [editToggleFormBox, setEditToggleFormBox] = useState(false);
@@ -65,7 +65,7 @@ function MobileContactList({contacts}) {
                 }
             </div>
 
-            {addToggleFormBox ? <ContactFormAdd setAddToggleFormBox={setAddToggleFormBox} /> : <></>}
+            {addToggleFormBox ? <ContactFormAdd setAddToggleFormBox={setAddToggleFormBox} contacts={contacts} setContact={setContact}/> : <></>}
 
         </div>
     )
