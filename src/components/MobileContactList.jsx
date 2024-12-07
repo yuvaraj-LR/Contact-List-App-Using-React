@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import ContactFormAdd from './ContactFormAdd';
+import { useContactListContextHook } from '../context/contact.context';
 
 function MobileContactList({contacts, setContact}) {
 
-    const [addToggleFormBox, setAddToggleFormBox] = useState(false);
-    const [editToggleFormBox, setEditToggleFormBox] = useState(false);
-    
+    const { setContactList, addToggleFormBox, setAddToggleFormBox } = useContactListContextHook();
 
     // Adding a contact
     const addAContactInList = () => {
@@ -65,7 +63,7 @@ function MobileContactList({contacts, setContact}) {
                 }
             </div>
 
-            {addToggleFormBox ? <ContactFormAdd setAddToggleFormBox={setAddToggleFormBox} contacts={contacts} setContact={setContact}/> : <></>}
+            {/* {addToggleFormBox ? <ContactFormAdd setAddToggleFormBox={setAddToggleFormBox} /> : <></>} */}
 
         </div>
     )
