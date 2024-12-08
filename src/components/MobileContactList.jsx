@@ -1,24 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useContactListContextHook } from '../context/contact.context';
+import ContactForm from './ContactForm';
 
-function MobileContactList({contacts, setContact}) {
+// import { ContactForm } from "./ContactForm";
 
-    const { setContactList, addToggleFormBox, setAddToggleFormBox } = useContactListContextHook();
 
-    // Adding a contact
-    const addAContactInList = () => {
 
-    }
+function MobileContactList() {
 
-    // Editing a contact
-    const editAContactInList = (index, updatedData) => {
-
-    }
-
-    // Delete a contact
-    const deleteAContactFromList = (index) => {
-
-    }
+    const { contactList, setContactList, addToggleFormBox, setAddToggleFormBox } = useContactListContextHook();
 
     return (
         <div className='flex flex_col contact_list'>
@@ -32,7 +22,7 @@ function MobileContactList({contacts, setContact}) {
 
             <div className="flex flex_wrap flex_gap_10 flex_center">
                 {
-                    contacts.map((contact, i) => (
+                    contactList.map((contact, i) => (
                         <>
                             <div class="card" key={`card-${i}`}>
                                 <div class="card-body">
@@ -47,12 +37,12 @@ function MobileContactList({contacts, setContact}) {
                                 </div>
 
                                 <div className="flex flex_gap_10 m-3 card_action_btns">
-                                    <button className="btn brown_btn w-100 flex flex_center flex_gap_10 edit_btn" onClick={() => editAContactInList(i, contact)}>
+                                    <button className="btn brown_btn w-100 flex flex_center flex_gap_10 edit_btn">
                                         <span><i class="fa-solid fa-pencil"></i></span>
                                         <span>Edit</span>
                                     </button>
 
-                                    <button className="btn brown_btn w-100 flex flex_center flex_gap_10 delete_btn" onClick={() => deleteAContactFromList(i)}>
+                                    <button className="btn brown_btn w-100 flex flex_center flex_gap_10 delete_btn">
                                         <span><i class="fa-solid fa-trash"></i></span>
                                         <span>Delete</span>
                                     </button>
@@ -63,7 +53,7 @@ function MobileContactList({contacts, setContact}) {
                 }
             </div>
 
-            {/* {addToggleFormBox ? <ContactFormAdd setAddToggleFormBox={setAddToggleFormBox} /> : <></>} */}
+            {addToggleFormBox ? <ContactForm /> : <></>}
 
         </div>
     )
