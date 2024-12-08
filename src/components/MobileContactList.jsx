@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useContactListContextHook } from '../context/contact.context';
 import ContactForm from './ContactForm';
+import { toast } from 'react-toastify';
 
 function MobileContactList() {
     const { 
@@ -59,7 +60,11 @@ function MobileContactList() {
 
                             <button 
                                 className="btn brown_btn w-100 flex flex_center flex_gap_10 delete_btn" 
-                                onClick={() => handleADeleteButton(i)}
+                                onClick={() => {
+                                    if (window.confirm('Are you sure you want to delete this contact?')) {
+                                        handleADeleteButton(i);
+                                    }
+                                }}
                             >
                                 <span><i className="fa-solid fa-trash"></i></span>
                                 <span>Delete</span>

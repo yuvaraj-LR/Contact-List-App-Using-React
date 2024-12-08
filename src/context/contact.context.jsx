@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { userListAPI } from "../api/data.api";
+import { toast } from "react-toastify";
 
 const contactListContext = createContext();
 
@@ -44,6 +45,7 @@ const ContactListContext = ({ children }) => {
 
         setAddToggleFormBox(false);
         setEditToggleFormBox(false);
+        toast.success("Contact Updated Successfully!!!");
     };
 
     return (
