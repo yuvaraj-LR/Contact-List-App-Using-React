@@ -3,51 +3,57 @@ import { userListAPI } from "../api/data.api";
 
 const contactListContext = createContext();
 
-// Custom Hook.
 const useContactListContextHook = () => {
     const value = useContext(contactListContext);
     return value;
-}
+};
 
-const ContactListContext = ({children}) => {
-
+const ContactListContext = ({ children }) => {
     const [contactList, setContactList] = useState([]);
     const [addToggleFormBox, setAddToggleFormBox] = useState(false);
+    const [editToggleFormBox, setEditToggleFormBox] = useState(false);
 
     useEffect(() => {
-        const fetch = async () => {
+        const fetchContacts = async () => {
             try {
                 const contactListData = await userListAPI();
                 setContactList(contactListData);
             } catch (error) {
-                console.log(error, "error");                
+                console.error(error);
             }
-        }
-
-        fetch();
+        };
+        fetchContacts();
     }, []);
 
-    // Adding a contact.
-    const addAContactInList = (payload) => {
+    const handleAdd = (payload) => {
+        if (Array.isArray(payload)) {
+            setContactList(payload); // Handles deletion
+        } else {
+            const contactIndex = contactList.findIndex((contact) => contact.id === payload.id);
 
-    }
+            let updatedContactList;
+            if (contactIndex === -1) {
+                updatedContactList = [payload, ...contactList];
+            } else {
+                updatedContactList = [...contactList];
+                updatedContactList[contactIndex] = payload;
+            }
 
-    // Edit a contact.
-    const editAContactInList = (payload, i) => {
+            setContactList(updatedContactList);
+        }
 
-    }
-
-    // Delete a contact.
-    const deleteAContactFromList = (i) => {
-
-    }
+        setAddToggleFormBox(false);
+        setEditToggleFormBox(false);
+    };
 
     return (
-        <contactListContext.Provider value={{contactList, setContactList, addToggleFormBox, setAddToggleFormBox, addAContactInList, editAContactInList, deleteAContactFromList}}>
+        <contactListContext.Provider 
+            value={{ contactList, addToggleFormBox, setAddToggleFormBox, editToggleFormBox, setEditToggleFormBox, handleAdd }}
+        >
             {children}
         </contactListContext.Provider>
-    )
-}
+    );
+};
 
-export {contactListContext, useContactListContextHook};
+export { contactListContext, useContactListContextHook };
 export default ContactListContext;
